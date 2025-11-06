@@ -1,0 +1,27 @@
+--cpu=Cortex-M4.fp
+"self_balancing_robot\startup_stm32l476xx.o"
+"self_balancing_robot\main.o"
+"self_balancing_robot\stm32l4xx_it.o"
+"self_balancing_robot\stm32l4xx_hal_msp.o"
+"self_balancing_robot\stm32l4xx_hal_tim.o"
+"self_balancing_robot\stm32l4xx_hal_tim_ex.o"
+"self_balancing_robot\stm32l4xx_hal.o"
+"self_balancing_robot\stm32l4xx_hal_rcc.o"
+"self_balancing_robot\stm32l4xx_hal_rcc_ex.o"
+"self_balancing_robot\stm32l4xx_hal_flash.o"
+"self_balancing_robot\stm32l4xx_hal_flash_ex.o"
+"self_balancing_robot\stm32l4xx_hal_flash_ramfunc.o"
+"self_balancing_robot\stm32l4xx_hal_gpio.o"
+"self_balancing_robot\stm32l4xx_hal_i2c.o"
+"self_balancing_robot\stm32l4xx_hal_i2c_ex.o"
+"self_balancing_robot\stm32l4xx_hal_dma.o"
+"self_balancing_robot\stm32l4xx_hal_dma_ex.o"
+"self_balancing_robot\stm32l4xx_hal_pwr.o"
+"self_balancing_robot\stm32l4xx_hal_pwr_ex.o"
+"self_balancing_robot\stm32l4xx_hal_cortex.o"
+"self_balancing_robot\stm32l4xx_hal_exti.o"
+"self_balancing_robot\system_stm32l4xx.o"
+--strict --scatter "Self_Balancing_Robot\Self_Balancing_Robot.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "Self_Balancing_Robot.map" -o Self_Balancing_Robot\Self_Balancing_Robot.axf

@@ -1,0 +1,19 @@
+Removed Pin From Net: NetName=NetD1_A Pin=Q1-1
+Removed Pin From Net: NetName=NetC1_2 Pin=Q1-2
+Removed Pin From Net: NetName=NetC3_1 Pin=Q1-3
+Removed Member From Class: ClassName=balancing_robot_board Member=Q1
+Added Component: Designator=Q?(SOT23)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Check_prices"; Value = "https://www.snapeda.com/parts/SI2323DS-T1-GE3/Vishay/view-part/?ref=eda"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "Vishay Siliconix"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "SI2323DS-T1-GE3"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "SOT-23-3 Vishay Siliconix"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/SI2323DS-T1-GE3/Vishay/view-part/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Pin To Net: NetName=NetLED1_K Pin=LED1-K
+Added Pin To Net: NetName=NetLED2_K Pin=LED2-K
+Added Pin To Net: NetName=NetLED3_K Pin=LED3-K
+Added Pin To Net: NetName=NetD1_A Pin=Q?-1
+Added Pin To Net: NetName=NetC3_1 Pin=Q?-2
+Added Pin To Net: NetName=NetC1_2 Pin=Q?-3
+Added Member To Class: ClassName=balancing_robot_board Member=Component Q? SI2323DS-T1-GE3

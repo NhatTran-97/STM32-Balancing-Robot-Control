@@ -1,0 +1,5 @@
+Change Component Designator: OldDesignator=R? NewDesignator=R21
+Change Component Designator: OldDesignator=R? NewDesignator=R22
+Change Component Designator: OldDesignator=R? NewDesignator=R23
+Added Member To Class: ClassName=balancing_robot_board Member=Component R21 Thick Film
+Added Member To Class: ClassName=balancing_robot_board Member=Component R23 Thick Film

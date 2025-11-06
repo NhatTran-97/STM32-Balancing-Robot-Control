@@ -1,0 +1,16 @@
+Removed Pin From Net: NetName=GND Pin=LED1-K
+Removed Member From Class: ClassName=balancing_robot_board Member=LED1
+Added Component: Designator=D4(LEDSC160X80X70L45N)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Check_prices"; Value = "https://www.snapeda.com/parts/597-5112-402F/Dialight/view-part/?ref=eda"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "Dialight"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "597-5112-402F"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "0603 Dialight"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/597-5112-402F/Dialight/view-part/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Pin To Net: NetName=GND Pin=D4-C
+Added Pin To Net: NetName=NetLED2_K Pin=LED2-K
+Added Pin To Net: NetName=NetD4_A Pin=D4-A
+Added Pin To Net: NetName=NetD4_A Pin=R16-2
+Added Net: Name=NetD4_A
+Added Member To Class: ClassName=balancing_robot_board Member=Component D4 597-5112-402F

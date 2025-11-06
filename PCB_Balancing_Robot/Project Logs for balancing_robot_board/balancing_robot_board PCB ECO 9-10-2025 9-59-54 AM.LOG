@@ -1,0 +1,17 @@
+Removed Pin From Net: NetName=GND Pin=SW1-1
+Removed Pin From Net: NetName=NetJ1_44 Pin=SW1-3
+Removed Pin From Net: NetName=GND Pin=SW1-4
+Removed Pin From Net: NetName=GND Pin=SW2-1
+Removed Pin From Net: NetName=NetJ1_45 Pin=SW2-3
+Removed Pin From Net: NetName=GND Pin=SW2-4
+Change Component Footprint: Designator=SW1 Old Footprint=SW2-SMD New Footprint=SW1-SMD
+Change Component Footprint: Designator=SW2 Old Footprint=SW2-SMD New Footprint=SW1-SMD
+Change Component Comment : Designator=SW1 Old Comment=SW New Comment=RESET
+Change Component Comment : Designator=SW2 Old Comment=SW New Comment=RESET
+Change component parameters: Designator = "SW1"; Footprint = "SW1-SMD"; UniqueID = "\FTHMGHVD"
+Change component parameters. Clean all parameters for all variants
+Change component parameters (AddParameter): Name = "Value"; Value = "SW chip 2 pin"; VariantName = "[No Variations]"
+Change component parameters: Designator = "SW2"; Footprint = "SW1-SMD"; UniqueID = "\WJCDXFYS"
+Change component parameters. Clean all parameters for all variants
+Change component parameters (AddParameter): Name = "Value"; Value = "SW chip 2 pin"; VariantName = "[No Variations]"
+Added Room: Name=balancing_robot_board

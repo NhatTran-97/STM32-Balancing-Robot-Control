@@ -1,0 +1,49 @@
+Removed Pin From Net: NetName=GND Pin=J1-A1
+Removed Pin From Net: NetName=VBUS Pin=J1-A4
+Removed Pin From Net: NetName=NetD3_2 Pin=J1-A6
+Removed Pin From Net: NetName=NetD2_1 Pin=J1-A7
+Removed Pin From Net: NetName=VBUS Pin=J1-A9
+Removed Pin From Net: NetName=GND Pin=J1-A12
+Removed Pin From Net: NetName=GND Pin=J1-B1
+Removed Pin From Net: NetName=VBUS Pin=J1-B4
+Removed Pin From Net: NetName=NetD3_2 Pin=J1-B6
+Removed Pin From Net: NetName=NetD2_1 Pin=J1-B7
+Removed Pin From Net: NetName=VBUS Pin=J1-B9
+Removed Pin From Net: NetName=GND Pin=J1-B12
+Removed Pin From Net: NetName=GND Pin=J1-S1
+Removed Pin From Net: NetName=GND Pin=J1-S2
+Removed Pin From Net: NetName=GND Pin=J1-S3
+Removed Pin From Net: NetName=GND Pin=J1-S4
+Removed Member From Class: ClassName=ESP32_DEV Member=J1
+Added Component: Designator=USB(TE_2388749-1)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Check_prices"; Value = "https://www.snapeda.com/parts/2388749-1/TE+Connectivity/view-part/?ref=eda"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "TE Connectivity"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "2388749-1"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/2388749-1/TE+Connectivity/view-part/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Pin To Net: NetName=GND Pin=USB-A1
+Added Pin To Net: NetName=VBUS Pin=USB-A4
+Added Pin To Net: NetName=NetD3_2 Pin=USB-A6
+Added Pin To Net: NetName=NetD2_1 Pin=USB-A7
+Added Pin To Net: NetName=VBUS Pin=USB-A9
+Added Pin To Net: NetName=GND Pin=USB-A12
+Added Pin To Net: NetName=GND Pin=USB-B1
+Added Pin To Net: NetName=VBUS Pin=USB-B4
+Added Pin To Net: NetName=NetD3_2 Pin=USB-B6
+Added Pin To Net: NetName=NetD2_1 Pin=USB-B7
+Added Pin To Net: NetName=VBUS Pin=USB-B9
+Added Pin To Net: NetName=GND Pin=USB-B12
+Added Pin To Net: NetName=GND Pin=USB-S1
+Added Pin To Net: NetName=GND Pin=USB-S2
+Added Pin To Net: NetName=GND Pin=USB-S3
+Added Pin To Net: NetName=GND Pin=USB-S4
+Added Pin To Net: NetName=NetR1_2 Pin=R1-2
+Added Pin To Net: NetName=NetR1_2 Pin=USB-A5
+Added Net: Name=NetR1_2
+Added Pin To Net: NetName=NetR2_2 Pin=R2-2
+Added Pin To Net: NetName=NetR2_2 Pin=USB-B5
+Added Net: Name=NetR2_2
+Added Member To Class: ClassName=ESP32_DEV Member=Component USB 2388749-1
+Added Room: Name=ESP32_DEV

@@ -1,0 +1,4 @@
+Added Pin To Net: NetName=GND Pin=LED1-K
+Added Pin To Net: NetName=GND Pin=LED2-K
+Added Pin To Net: NetName=GND Pin=LED3-K
+Added Member To Class: ClassName=balancing_robot_board Member=Component R14 Thick Film

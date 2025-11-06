@@ -1,0 +1,12 @@
+Removed Pin From Net: NetName=Net*_1 Pin=*-1
+Added Pin To Net: NetName=GND Pin=LED1-K
+Added Pin To Net: NetName=GND Pin=LED2-K
+Added Pin To Net: NetName=GND Pin=LED3-K
+Change Net Name : Old Net Name=Net*_1 New Net Name=Net*_2
+Added Pin To Net: NetName=Net*_1 Pin=*-1
+Added Pin To Net: NetName=Net*_1 Pin=J1-55
+Added Net: Name=Net*_1
+Added Pin To Net: NetName=NetJ1_30 Pin=J1-30
+Added Pin To Net: NetName=NetJ1_30 Pin=U5-23
+Added Net: Name=NetJ1_30
+Added Member To Class: ClassName=balancing_robot_board Member=Component R14 Thick Film

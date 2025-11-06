@@ -1,0 +1,19 @@
+Removed Pin From Net: NetName=GND Pin=C16-4
+Removed Pin From Net: NetName=VCC Pin=C16-5
+Change Component Footprint: Designator=C16 Old Footprint=JP3-C2T New Footprint=JP2-C2T
+Change Component Comment : Designator=C16 Old Comment=JP3x2 New Comment=JP2x2
+Change component parameters: Designator = "C16"; Footprint = "JP2-C2T"; UniqueID = "\VVGIWYKG"
+Change component parameters. Clean all parameters for all variants
+Change component parameters (AddParameter): Name = "ComponentLink1 Description"; Value = "Manufacturer"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ComponentLink1URL"; Value = "http://www.we-online.com"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ComponentLink2 Description"; Value = "Datasheet"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ComponentLink2URL"; Value = "http://katalog.we-online.de/em/datasheet/6130xx21821.pdf"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Created by"; Value = "Karrer Zheng"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Created Date"; Value = "29 March 2013"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer"; Value = "W¨¹rth Elektronik eiSos GmbH"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "NoPins"; Value = "04"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "partNo"; Value = "61300421821"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=NetC16_4 Pin=C16-4
+Added Pin To Net: NetName=NetC16_4 Pin=J1-35
+Added Net: Name=NetC16_4
+Added Member To Class: ClassName=balancing_robot_board Member=Component R22 Thick Film

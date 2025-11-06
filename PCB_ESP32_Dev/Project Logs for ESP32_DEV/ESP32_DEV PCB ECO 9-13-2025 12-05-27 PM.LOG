@@ -1,0 +1,19 @@
+Removed Member From Class: ClassName=ESP32_DEV Member=U4
+Added Component: Designator=U(MODULE_DM-OLED096-636)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Check_prices"; Value = "https://www.snapeda.com/parts/DM-OLED096-636/Display+Module/view-part/?ref=eda"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "Display Module"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "DM-OLED096-636"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "Package"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/DM-OLED096-636/Display+Module/view-part/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Pin To Net: NetName=GND Pin=U-1
+Added Pin To Net: NetName=VCC Pin=U-2
+Added Pin To Net: NetName=NetU_3 Pin=U-3
+Added Pin To Net: NetName=NetU_3 Pin=X1-16
+Added Net: Name=NetU_3
+Added Pin To Net: NetName=NetU_4 Pin=U-4
+Added Pin To Net: NetName=NetU_4 Pin=X1-24
+Added Net: Name=NetU_4
+Added Member To Class: ClassName=ESP32_DEV Member=Component U DM-OLED096-636
+Added Room: Name=ESP32_DEV

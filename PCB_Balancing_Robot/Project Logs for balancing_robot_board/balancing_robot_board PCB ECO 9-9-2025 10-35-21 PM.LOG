@@ -1,0 +1,38 @@
+Removed Pin From Net: NetName=Net*_1 Pin=*-1
+Removed Pin From Net: NetName=GND Pin=J2-N
+Removed Pin From Net: NetName=NetC1_1 Pin=J2-P
+Removed Pin From Net: NetName=NetC1_2 Pin=S1-1
+Removed Pin From Net: NetName=NetC1_1 Pin=S1-2
+Removed Member From Class: ClassName=balancing_robot_board Member=J2
+Removed Member From Class: ClassName=balancing_robot_board Member=S1
+Added Component: Designator=ON/OFF(PJ-031D)
+Add component. Clean all parameters for all variants
+Added Component: Designator=S?(Switch)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Circuit"; Value = "SPDT"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Contact Rating @ Voltage"; Value = "0.25A @ 125VAC"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer 1"; Value = "TE Connectivity"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number 1"; Value = "SLS121PC04"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mounting Type"; Value = "PCB mount"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SCDType"; Value = "spec"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1"; Value = "Digi-Key"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = "450-1598-ND"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Switch Function"; Value = "On-On"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=GND Pin=LED1-K
+Added Pin To Net: NetName=GND Pin=LED2-K
+Added Pin To Net: NetName=GND Pin=LED3-K
+Added Pin To Net: NetName=NetC1_1 Pin=ON/OFF-1
+Added Pin To Net: NetName=GND Pin=ON/OFF-2
+Added Pin To Net: NetName=GND Pin=ON/OFF-3
+Added Pin To Net: NetName=NetC1_2 Pin=S?-1
+Added Pin To Net: NetName=NetC1_1 Pin=S?-2
+Change Net Name : Old Net Name=Net*_1 New Net Name=Net*_2
+Added Pin To Net: NetName=Net*_1 Pin=*-1
+Added Pin To Net: NetName=Net*_1 Pin=J1-55
+Added Net: Name=Net*_1
+Added Pin To Net: NetName=NetJ1_30 Pin=J1-30
+Added Pin To Net: NetName=NetJ1_30 Pin=U5-23
+Added Net: Name=NetJ1_30
+Added Member To Class: ClassName=balancing_robot_board Member=Component ON/OFF POWER
+Added Member To Class: ClassName=balancing_robot_board Member=Component R14 Thick Film
+Added Member To Class: ClassName=balancing_robot_board Member=Component S? ON-ON

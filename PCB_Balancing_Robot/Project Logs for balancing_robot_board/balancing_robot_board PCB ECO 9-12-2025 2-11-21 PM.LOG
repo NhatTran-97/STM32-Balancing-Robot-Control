@@ -1,0 +1,15 @@
+Change Component Designator: OldDesignator=ESP SOCKET NewDesignator=C19
+Change Component Designator: OldDesignator=RESET NewDesignator=SW3
+Change Component Description : Designator=Q1 Old Description=20V 4.7A 1.25W 39 mohms @ 4.5V New Description=20V 4.7A 1.25W 39 mohms @ 4.5V | Siliconix / Vishay SI2323DS-T1-GE3
+Change Component Description : Designator=D3 Old Description=SMD LED 0603 R SAMPLE STRIP; Discretes New Description=SMD LED 0603 R SAMPLE STRIP; Discretes | Dialight 597-5112-402F
+Change Component Description : Designator=D4 Old Description=SMD LED 0603 R SAMPLE STRIP; Discretes New Description=SMD LED 0603 R SAMPLE STRIP; Discretes | Dialight 597-5112-402F
+Change Component Description : Designator=D5 Old Description=SMD LED 0603 R SAMPLE STRIP; Discretes New Description=SMD LED 0603 R SAMPLE STRIP; Discretes | Dialight 597-5112-402F
+Change Component Library : Designator=C16 Old Library=Thu Vi?n Altium FULL HD.IntLib New Library=Thu Vi?n Altium FULL HD.IntLib
+Change Component Library : Designator=C19 Old Library=Thu Vi?n Altium FULL HD.IntLib New Library=Thu Vi?n Altium FULL HD.IntLib
+Change Component Library : Designator=HC1 Old Library=Thu Vi?n Altium FULL HD.IntLib New Library=Thu Vi?n Altium FULL HD.IntLib
+Change Component Library : Designator=SW3 Old Library=Thu Vi?n Altium FULL HD.IntLib New Library=Thu Vi?n Altium FULL HD.IntLib
+Change Component Library : Designator=SW1 Old Library=Thu Vi?n Altium FULL HD.IntLib New Library=Thu Vi?n Altium FULL HD.IntLib
+Change Component Library : Designator=SW2 Old Library=Thu Vi?n Altium FULL HD.IntLib New Library=Thu Vi?n Altium FULL HD.IntLib
+Added Component: Designator=BZZ1(BUZZER_CT-1205-SMT)
+Add component. Clean all parameters for all variants
+Added Member To Class: ClassName=balancing_robot_board Member=Component BZZ1 Buzzer

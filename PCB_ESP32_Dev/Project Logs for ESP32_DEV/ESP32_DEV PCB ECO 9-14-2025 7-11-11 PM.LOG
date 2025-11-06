@@ -1,0 +1,14 @@
+Added Component: Designator=D4(LED_KP-1608SURCK)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Check_prices"; Value = "https://www.snapeda.com/parts/KP-1608SURCK/Kingbright/view-part/?ref=eda"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "Kingbright"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "KP-1608SURCK"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "0603 Kingbright"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/KP-1608SURCK/Kingbright/view-part/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Pin To Net: NetName=GND Pin=D4-2
+Added Pin To Net: NetName=NetD4_1 Pin=D4-1
+Added Pin To Net: NetName=NetD4_1 Pin=R31-1
+Added Net: Name=NetD4_1
+Added Member To Class: ClassName=ESP32_DEV Member=Component D4 KP-1608SURCK
+Added Room: Name=ESP32_DEV

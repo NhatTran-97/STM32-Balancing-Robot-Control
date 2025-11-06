@@ -1,0 +1,16 @@
+Removed Pin From Net: NetName=VCC Pin=R47-1
+Removed Member From Class: ClassName=balancing_robot_board Member=R47
+Change Component Designator: OldDesignator=C? NewDesignator=C19
+Added Pin To Net: NetName=VCC Pin=C19-3
+Added Pin To Net: NetName=VCC Pin=C19-6
+Added Pin To Net: NetName=NetHC1_2 Pin=J1-58
+Added Pin To Net: NetName=NetHC1_3 Pin=J1-59
+Added Pin To Net: NetName=NetLED1_K Pin=LED1-K
+Added Pin To Net: NetName=NetLED2_K Pin=LED2-K
+Added Pin To Net: NetName=NetLED3_K Pin=LED3-K
+Added Pin To Net: NetName=NetC19_2 Pin=C19-2
+Added Pin To Net: NetName=NetC19_2 Pin=J1-16
+Added Net: Name=NetC19_2
+Added Pin To Net: NetName=NetC19_7 Pin=C19-7
+Added Pin To Net: NetName=NetC19_7 Pin=J1-17
+Added Net: Name=NetC19_7

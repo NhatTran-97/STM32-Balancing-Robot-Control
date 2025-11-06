@@ -1,0 +1,4 @@
+Removed Member From Class: ClassName=ESP32_DEV Member=LED?
+Added Pin To Net: NetName=NetD?_A Pin=R31-1
+Added Net: Name=NetD?_A
+Added Room: Name=ESP32_DEV

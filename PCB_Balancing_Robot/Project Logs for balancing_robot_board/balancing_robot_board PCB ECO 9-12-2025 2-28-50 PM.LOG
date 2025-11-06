@@ -1,0 +1,7 @@
+Change Component Designator: OldDesignator=LS? NewDesignator=LS
+Added Pin To Net: NetName=NetLS_N Pin=LS-N
+Added Pin To Net: NetName=NetLS_N Pin=STA.TR3-2
+Added Net: Name=NetLS_N
+Added Pin To Net: NetName=NetLS_P Pin=LS-P
+Added Pin To Net: NetName=NetLS_P Pin=R25-2
+Added Net: Name=NetLS_P

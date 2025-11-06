@@ -1,0 +1,7 @@
+Change Component Designator: OldDesignator=C? NewDesignator=C20
+Change Component Designator: OldDesignator=R? NewDesignator=R14
+Change Component Designator: OldDesignator=SW? NewDesignator=SW3
+Added Pin To Net: NetName=NetLED1_K Pin=LED1-K
+Added Pin To Net: NetName=NetLED2_K Pin=LED2-K
+Added Pin To Net: NetName=NetLED3_K Pin=LED3-K
+Added Member To Class: ClassName=balancing_robot_board Member=Component C20 100nF

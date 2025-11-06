@@ -1,0 +1,5 @@
+Change Component Comment : Designator=LS1 Old Comment=8540 New Comment=KSSG74B17-3
+Added Component: Designator=BZZ1(BUZZER_CT-1205-SMT)
+Add component. Clean all parameters for all variants
+Added Member To Class: ClassName=balancing_robot_board Member=Component BZZ1 Buzzer
+Added Member To Class: ClassName=balancing_robot_board Member=Component SW3 RESET
