@@ -27,3 +27,9 @@ self_balancing_robot\stm32l4xx_hal_msp.o: ../Drivers/STM32L4xx_HAL_Driver/Inc/st
 self_balancing_robot\stm32l4xx_hal_msp.o: ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_flash_ramfunc.h
 self_balancing_robot\stm32l4xx_hal_msp.o: ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_pwr.h
 self_balancing_robot\stm32l4xx_hal_msp.o: ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_pwr_ex.h
+self_balancing_robot\stm32l4xx_hal_msp.o: ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_spi.h
+self_balancing_robot\stm32l4xx_hal_msp.o: ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_spi_ex.h
+self_balancing_robot\stm32l4xx_hal_msp.o: ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim.h
+self_balancing_robot\stm32l4xx_hal_msp.o: ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim_ex.h
+self_balancing_robot\stm32l4xx_hal_msp.o: ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h
+self_balancing_robot\stm32l4xx_hal_msp.o: ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h

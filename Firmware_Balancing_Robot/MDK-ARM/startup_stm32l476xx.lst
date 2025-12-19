@@ -692,9 +692,10 @@ ARM Macro Assembler    Page 11
 Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M4.fp --apcs=int
 erwork --depend=self_balancing_robot\startup_stm32l476xx.d -oself_balancing_rob
 ot\startup_stm32l476xx.o -I.\RTE\_Self_Balancing_Robot -IC:\Users\dnnev\AppData
-\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include --predefine="__UVISION_VERS
-ION SETA 528" --predefine="_RTE_ SETA 1" --list=startup_stm32l476xx.lst startup
-_stm32l476xx.s
+\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include -IC:\Users\dnnev\AppData\Lo
+cal\Arm\Packs\Keil\STM32L4xx_DFP\2.6.1\Drivers\CMSIS\Device\ST\STM32L4xx\Includ
+e --predefine="__UVISION_VERSION SETA 528" --predefine="_RTE_ SETA 1" --predefi
+ne="STM32L476xx SETA 1" --list=startup_stm32l476xx.lst startup_stm32l476xx.s
 
 
 
@@ -1798,4 +1799,4 @@ Symbol: __use_two_region_memory
       None
 Comment: __use_two_region_memory unused
 3 symbols
-447 symbols in table
+448 symbols in table
