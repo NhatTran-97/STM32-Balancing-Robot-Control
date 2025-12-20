@@ -20,6 +20,9 @@ self_balancing_robot\stm32l4xx_hal_i2c_ex.o: ../Drivers/STM32L4xx_HAL_Driver/Inc
 self_balancing_robot\stm32l4xx_hal_i2c_ex.o: ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_gpio_ex.h
 self_balancing_robot\stm32l4xx_hal_i2c_ex.o: ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_dma.h
 self_balancing_robot\stm32l4xx_hal_i2c_ex.o: ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_cortex.h
+self_balancing_robot\stm32l4xx_hal_i2c_ex.o: ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_adc.h
+self_balancing_robot\stm32l4xx_hal_i2c_ex.o: ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h
+self_balancing_robot\stm32l4xx_hal_i2c_ex.o: ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_adc_ex.h
 self_balancing_robot\stm32l4xx_hal_i2c_ex.o: ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_exti.h
 self_balancing_robot\stm32l4xx_hal_i2c_ex.o: ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_flash.h
 self_balancing_robot\stm32l4xx_hal_i2c_ex.o: ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_flash_ex.h

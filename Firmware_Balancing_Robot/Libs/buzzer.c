@@ -1,6 +1,6 @@
 #include "buzzer.h"
 
-#define BUZZER_DUTY_ON   10
+#define BUZZER_DUTY_ON   350
 
 void Buzzer_Init(void)
 {

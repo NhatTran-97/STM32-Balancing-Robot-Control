@@ -31,7 +31,10 @@
 #include "euler_angles.h"
 #include "lqr.h"
 #include "buzzer.h"
-
+#include "uart.h"
+#include "telemetry.h"
+#include "battery.h"
+#include "rgb.h"
 //#include "moving_average_filter.h"
 
 
@@ -44,7 +47,6 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-#define RC_OFFSET 12000
 
 /* USER CODE END PD */
 
@@ -55,6 +57,9 @@ uint8_t status;
 /* USER CODE END PM */
 
 /* Private variables ---------------------------------------------------------*/
+ADC_HandleTypeDef hadc1;
+DMA_HandleTypeDef hdma_adc1;
+
 SPI_HandleTypeDef hspi2;
 DMA_HandleTypeDef hdma_spi2_rx;
 DMA_HandleTypeDef hdma_spi2_tx;
@@ -66,9 +71,16 @@ TIM_HandleTypeDef htim4;
 TIM_HandleTypeDef htim8;
 
 UART_HandleTypeDef huart2;
+DMA_HandleTypeDef hdma_usart2_rx;
+DMA_HandleTypeDef hdma_usart2_tx;
 
 /* USER CODE BEGIN PV */
 int dumb_data = 0;
+volatile  uint16_t adc_battery;
+
+float robot_battery;
+
+
 const static motor_inst motor_a = {.htim_motor = &htim1,
 																	 .htim_motor_ch = TIM_CHANNEL_1,
 																	 .mdir_pin_number = PHA_Pin,
@@ -137,7 +149,8 @@ icm_20948_data icm_data;
 int32_t sum_gyro_x, sum_gyro_y, sum_gyro_z;
 int16_t mag_x, mag_y, mag_z;
 																
-														
+volatile uint8_t telem_div = 0;
+volatile bool telemetry_pending = false;													
 																
 																
 // min / max magnetometer
@@ -162,12 +175,21 @@ float mag_scale_x, mag_scale_y, mag_scale_z;
 imu_norm imu_norm_data;
 euler_angles euler_temp,euler_angles_robot, euler_angles_old;																
 StateTypeDef robot_state;
+RGB        rgb;
 
 int16_t counter_time;
 
 float force;
 
-static float32_t reference1, reference2;
+
+
+//uint8_t rx1_buf[256];
+//volatile uint16_t rx_len = 0;
+//volatile uint8_t rx_ready = 0;
+
+//static float32_t reference1, reference2;
+
+
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -180,6 +202,7 @@ static void MX_TIM3_Init(void);
 static void MX_TIM4_Init(void);
 static void MX_TIM8_Init(void);
 static void MX_SPI2_Init(void);
+static void MX_ADC1_Init(void);
 static void MX_USART2_UART_Init(void);
 /* USER CODE BEGIN PFP */
 
@@ -219,6 +242,7 @@ int main(void)
 
   /* USER CODE BEGIN SysInit */
 
+
   /* USER CODE END SysInit */
 
   /* Initialize all configured peripherals */
@@ -230,16 +254,22 @@ int main(void)
   MX_TIM4_Init();
   MX_TIM8_Init();
   MX_SPI2_Init();
+  MX_ADC1_Init();
   MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
 	
 	Buzzer_Init();
+	UART_Init();
+	Telemetry_Init();
+
+	 rgb_init(&rgb, GPIOB, RGB_R_Pin, RGB_G_Pin, RGB_B_Pin);
+  //UART_SendString("UART ready\r\n");
 	
 	HAL_Delay(100);
 
 
 
-	
+
 	// Start PWM in channels 2 and 3
 	HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1);
 	HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_2);
@@ -264,28 +294,22 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
+		
 
     /* USER CODE BEGIN 3 */
-	//	__HAL_TIM_SET_COMPARE(&htim8, TIM_CHANNEL_1, 360); // ~60%
-		Buzzer_On();
+		robot_battery = Battery_GetVbat();
+		uint8_t b;
+    while (UART_ReadByte(&b))
+    {
+        Telemetry_RxByte(b);   
+    }
+		if (telemetry_pending)
+    {
+        telemetry_pending = false;
+        Telemetry_SendEuler(&euler_angles_robot);
+    }
 		
-		
-
-		HAL_GPIO_WritePin(RGB_R_GPIO_Port, RGB_R_Pin, GPIO_PIN_RESET);
-		HAL_Delay(100);
-	//	__HAL_TIM_SET_COMPARE(&htim8, TIM_CHANNEL_1, 0);
-		Buzzer_Off();
-		
-		HAL_GPIO_WritePin(RGB_G_GPIO_Port, RGB_G_Pin, GPIO_PIN_SET);
-		HAL_Delay(100);
-		HAL_GPIO_WritePin(RGB_G_GPIO_Port, RGB_G_Pin, GPIO_PIN_RESET);
-		HAL_Delay(100);
-		HAL_GPIO_WritePin(RGB_B_GPIO_Port, RGB_B_Pin, GPIO_PIN_SET);
-		HAL_Delay(100);
-		HAL_GPIO_WritePin(RGB_B_GPIO_Port, RGB_B_Pin, GPIO_PIN_RESET);
-		HAL_Delay(100);
-		
-		 
+		rgb_setcolor(&rgb, RGB_PURPLE);
 		if(timer_flag == 1) // 2ms
 		{
 		
@@ -304,9 +328,14 @@ int main(void)
 		//	set_speed_open((motor_inst*)&motor_b, (duty_cycle_ch2 / 100));
 		//	dumb_data++;
 			
-			icm_20948_read_data(&icm_data);
-			 sensor2imu(icm_data, &imu_norm_data);
-			 complementary_filter_euler(imu_norm_data, &euler_angles_robot);
+				icm_20948_read_data(&icm_data);
+				sensor2imu(icm_data, &imu_norm_data);
+				complementary_filter_euler(imu_norm_data, &euler_angles_robot);
+			   if (++telem_div >= 10)   // 50Hz,    // 5 * 2ms = 10ms = 100Hz
+				{
+						telem_div = 0;
+						telemetry_pending = true;
+				}
 			 // apply_pid(&mot_rotation_pid, motora_enc.position - motorb_enc.position);
 			 robot_state.angle = euler_angles_robot.pitch;
 			 robot_state.angle_vel = robot_state.angle_vel * 0.8f + 0.2f * (euler_angles_robot.pitch - euler_angles_old.pitch) * SAMPLE_RATE;
@@ -344,8 +373,9 @@ int main(void)
 			euler_angles_old = euler_angles_robot;
 			
 			
-		}
 		
+		
+  }
   }
   /* USER CODE END 3 */
 }
@@ -398,6 +428,73 @@ void SystemClock_Config(void)
   {
     Error_Handler();
   }
+}
+
+/**
+  * @brief ADC1 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_ADC1_Init(void)
+{
+
+  /* USER CODE BEGIN ADC1_Init 0 */
+
+  /* USER CODE END ADC1_Init 0 */
+
+  ADC_MultiModeTypeDef multimode = {0};
+  ADC_ChannelConfTypeDef sConfig = {0};
+
+  /* USER CODE BEGIN ADC1_Init 1 */
+
+  /* USER CODE END ADC1_Init 1 */
+
+  /** Common config
+  */
+  hadc1.Instance = ADC1;
+  hadc1.Init.ClockPrescaler = ADC_CLOCK_ASYNC_DIV2;
+  hadc1.Init.Resolution = ADC_RESOLUTION_12B;
+  hadc1.Init.DataAlign = ADC_DATAALIGN_RIGHT;
+  hadc1.Init.ScanConvMode = ADC_SCAN_DISABLE;
+  hadc1.Init.EOCSelection = ADC_EOC_SINGLE_CONV;
+  hadc1.Init.LowPowerAutoWait = DISABLE;
+  hadc1.Init.ContinuousConvMode = ENABLE;
+  hadc1.Init.NbrOfConversion = 1;
+  hadc1.Init.DiscontinuousConvMode = DISABLE;
+  hadc1.Init.ExternalTrigConv = ADC_SOFTWARE_START;
+  hadc1.Init.ExternalTrigConvEdge = ADC_EXTERNALTRIGCONVEDGE_NONE;
+  hadc1.Init.DMAContinuousRequests = ENABLE;
+  hadc1.Init.Overrun = ADC_OVR_DATA_PRESERVED;
+  hadc1.Init.OversamplingMode = DISABLE;
+  if (HAL_ADC_Init(&hadc1) != HAL_OK)
+  {
+    Error_Handler();
+  }
+
+  /** Configure the ADC multi-mode
+  */
+  multimode.Mode = ADC_MODE_INDEPENDENT;
+  if (HAL_ADCEx_MultiModeConfigChannel(&hadc1, &multimode) != HAL_OK)
+  {
+    Error_Handler();
+  }
+
+  /** Configure Regular Channel
+  */
+  sConfig.Channel = ADC_CHANNEL_1;
+  sConfig.Rank = ADC_REGULAR_RANK_1;
+  sConfig.SamplingTime = ADC_SAMPLETIME_640CYCLES_5;
+  sConfig.SingleDiff = ADC_SINGLE_ENDED;
+  sConfig.OffsetNumber = ADC_OFFSET_NONE;
+  sConfig.Offset = 0;
+  if (HAL_ADC_ConfigChannel(&hadc1, &sConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN ADC1_Init 2 */
+	HAL_ADC_Start_DMA(&hadc1, (uint32_t*)&adc_battery, 1);
+  /* USER CODE END ADC1_Init 2 */
+
 }
 
 /**
@@ -814,12 +911,21 @@ static void MX_DMA_Init(void)
   __HAL_RCC_DMA1_CLK_ENABLE();
 
   /* DMA interrupt init */
+  /* DMA1_Channel1_IRQn interrupt configuration */
+  HAL_NVIC_SetPriority(DMA1_Channel1_IRQn, 1, 0);
+  HAL_NVIC_EnableIRQ(DMA1_Channel1_IRQn);
   /* DMA1_Channel4_IRQn interrupt configuration */
   HAL_NVIC_SetPriority(DMA1_Channel4_IRQn, 0, 0);
   HAL_NVIC_EnableIRQ(DMA1_Channel4_IRQn);
   /* DMA1_Channel5_IRQn interrupt configuration */
   HAL_NVIC_SetPriority(DMA1_Channel5_IRQn, 0, 0);
   HAL_NVIC_EnableIRQ(DMA1_Channel5_IRQn);
+  /* DMA1_Channel6_IRQn interrupt configuration */
+  HAL_NVIC_SetPriority(DMA1_Channel6_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(DMA1_Channel6_IRQn);
+  /* DMA1_Channel7_IRQn interrupt configuration */
+  HAL_NVIC_SetPriority(DMA1_Channel7_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(DMA1_Channel7_IRQn);
 
 }
 

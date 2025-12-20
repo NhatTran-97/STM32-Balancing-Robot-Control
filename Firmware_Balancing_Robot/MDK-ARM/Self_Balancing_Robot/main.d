@@ -21,6 +21,9 @@ self_balancing_robot\main.o: ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_g
 self_balancing_robot\main.o: ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_gpio_ex.h
 self_balancing_robot\main.o: ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_dma.h
 self_balancing_robot\main.o: ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_cortex.h
+self_balancing_robot\main.o: ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_adc.h
+self_balancing_robot\main.o: ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h
+self_balancing_robot\main.o: ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_adc_ex.h
 self_balancing_robot\main.o: ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_exti.h
 self_balancing_robot\main.o: ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_flash.h
 self_balancing_robot\main.o: ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_flash_ex.h
@@ -48,3 +51,8 @@ self_balancing_robot\main.o: ../Libs/imu_data.h
 self_balancing_robot\main.o: ../Libs/euler_angles.h
 self_balancing_robot\main.o: ../Libs/lqr.h
 self_balancing_robot\main.o: ../Libs/buzzer.h
+self_balancing_robot\main.o: ../Libs/uart.h
+self_balancing_robot\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
+self_balancing_robot\main.o: ../Libs/telemetry.h
+self_balancing_robot\main.o: ../Libs/battery.h
+self_balancing_robot\main.o: ../Libs/rgb.h
